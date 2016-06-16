@@ -1,16 +1,17 @@
 //create object with properties
-function car(make, model, colour){
-    this.make = make;
-    this.model = model;
-    this.colour = colour;
-
+function person(firstName, surName){
+    this.firstName = firstName;
+    this.surName = surName;
+    this.fullName = function(){
+        return firstName + " " + surName;
+        }
     };
 
 
-
 //create new object
-var newCar = new car("Nissan", "Micra", "Green");
+var newPerson = new person("Mark", "Perez");
 
+var newName = newPerson.fullName();
 
-document.getElementById("demo").innerHTML = "Make: " + newCar.make + "<br>" + "Model: " + newCar.model + "<br>" + "Colour: " + newCar.colour;
+document.getElementById("demo").innerHTML = newName;
 
