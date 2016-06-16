@@ -1,10 +1,20 @@
+//create object with properties
+function car(make, model, colour){
+    this.make = make;
+    this.model = model;
+    this.colour = colour;
+    //create property with method
+    this.price = function(cost, discount){
+        return cost - discount;
+    };
 
-var person = {
-    name:"Mark",
-    age:"27",
-    eyeColour:"Brown"
 };
 
+//create new object
+var newCar = new car("Nissan", "Micra", "Green");
 
-document.getElementById("demo").innerHTML = "Name: " + person.name + "<br>" + "Age: " + person.age + "<br>" + "Eye colour: " + person.eyeColour;
+//acces the method
+var carPrice = newCar.price(5000, 200);
+
+document.getElementById("demo").innerHTML = "Make: " + newCar.make + "<br>" + "Model: " + newCar.model + "<br>" + "Colour: " + newCar.colour + "<br>" + "Price: " + carPrice;
 
