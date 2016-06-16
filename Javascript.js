@@ -1,17 +1,20 @@
 //create object with properties
-function person(firstName, surName){
-    this.firstName = firstName;
-    this.surName = surName;
-    this.fullName = function(){
-        return firstName + " " + surName;
-        }
+function address(name, number, road, city){
+    this.name = name;
+    //create nested object
+    this.street = {
+        number: number,
+        road: road,
+    }
+    this.city = city;
     };
 
 
 //create new object
-var newPerson = new person("Mark", "Perez");
+var newHome = new address("Big House", "1", "First Street", "Big City");
 
-var newName = newPerson.fullName();
+//access nested object
+var streetName = newHome.street.number + " " + newHome.street.road;
 
-document.getElementById("demo").innerHTML = newName;
+document.getElementById("demo").innerHTML = newHome.name + "<br>" + streetName + "<br>" + newHome.city;
 
